@@ -16,12 +16,10 @@ document.querySelectorAll('*').forEach(x => {
 const images = document.querySelectorAll('img');
 images.forEach(x => {
     x.addEventListener('mouseover', (event) => {
-        setTimeout(() => {
             event.target.style.transform = 'scale(1.5)';
             event.target.style.transition = 'transform .8s';
             event.stopPropagation();
-        }, 500)}
-    );
+    });
     x.addEventListener('mouseout', (event) => {
         event.target.style.transform = '';
         event.target.style.zIndex = '-999';
@@ -46,4 +44,12 @@ setTimeout(function() {
         header.style.backgroundColor = 'rgba(38, 191, 102, .5)';
     });
 
-}, 1200)
+}, 1200);
+
+// RESIZE NOTIFICATION
+let wHeight = window.innerHeight;
+let wWidth = window.innerWidth;
+
+window.addEventListener('resize', () => {
+    alert(`the new height is ${wHeight} and the new width is ${wWidth}`)
+});
