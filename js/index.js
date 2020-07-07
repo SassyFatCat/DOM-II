@@ -19,9 +19,13 @@ images.forEach(x => {
         setTimeout(() => {
             event.target.style.transform = 'scale(1.5)';
             event.target.style.transition = 'transform .8s';
+            event.stopPropagation();
         }, 1000)
     });
     x.addEventListener('mouseout', (event) => {
         event.target.style.transform = 'scale(1)';
+        event.target.style.zIndex = '-999';
     })
-})
+});
+
+//DBLCLICK
