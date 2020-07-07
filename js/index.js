@@ -12,7 +12,7 @@ document.querySelectorAll('*').forEach(x => {
         event.stopPropagation();});
 });
 
-// HOVER/ZOOM ON IMAGES
+// HOVER/ZOOM ON IMAGES -------------------------------->
 const images = document.querySelectorAll('img');
 images.forEach(x => {
     x.addEventListener('mouseover', (event) => {
@@ -20,12 +20,30 @@ images.forEach(x => {
             event.target.style.transform = 'scale(1.5)';
             event.target.style.transition = 'transform .8s';
             event.stopPropagation();
-        }, 1000)
-    });
+        }, 500)}
+    );
     x.addEventListener('mouseout', (event) => {
-        event.target.style.transform = 'scale(1)';
+        event.target.style.transform = '';
         event.target.style.zIndex = '-999';
     })
 });
 
-//DBLCLICK
+// MAKING TEXT VISIBLE ON HOVER --------------------------------------->
+const destinationPar = document.querySelectorAll('.destination p');
+const destination = document.querySelectorAll('.destination *');
+destinationPar.forEach(x => x.style.display = "none");
+destination.forEach(x => x.addEventListener('mouseover', () => {
+    destinationPar.forEach(x => x.style.display = "")
+}))
+destination.forEach(x => x.addEventListener('mouseout', () => {
+    destinationPar.forEach(x => x.style.display = "none");
+}));
+
+//SCROLL ADDS HEADER BACKGROUND COLOR---------------------------------->
+const header = document.querySelector('header');
+setTimeout(function() {
+    window.addEventListener('scroll', () => {
+        header.style.backgroundColor = 'rgba(38, 191, 102, .5)';
+    });
+
+}, 1200)
