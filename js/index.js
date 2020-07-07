@@ -53,3 +53,4 @@ let wWidth = window.innerWidth;
 window.addEventListener('resize', () => {
     alert(`the new height is ${wHeight} and the new width is ${wWidth}`)
 });
+
