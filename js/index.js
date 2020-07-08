@@ -70,4 +70,31 @@ outside.addEventListener('dblclick', (event) => {
     let backColor = prompt('What background color?', 'type a color');
     event.target.style.backgroundColor = backColor;
     event.stopPropagation();
-})
+});
+
+// DOUBLE CLICK IMAGES TO CHANGE URL
+images.forEach(x => x.addEventListener('dblclick', (event) => {
+    source = prompt('What URL?', 'type url here');
+    event.target.src = source;
+    event.stopPropagation();
+}));
+
+// MOUSEOVER ON NAV BAR TAKES OUT HEADER AND CENTERS LINKS
+const h1 = document.querySelector('h1');
+const navContainer = document.querySelector('.nav-container');
+navContainer.addEventListener('mouseover', (event) => {
+    h1.style.display = "none";
+    event.target.style.justifyContent = "space-around";
+    event.stopPropagation();
+});
+navContainer.addEventListener('mouseout', (event) => {
+    h1.style.display = "";
+    event.target.style.justifyContent = "space-between";
+    event.stopPropagation();
+});
+
+// NAVIGATION ITEMS, PREVENT DEFAULT
+const links = document.querySelectorAll('.nav-container a');
+links.forEach(x => x.addEventListener('click', (event) => {
+    event.preventDefault();
+}))
