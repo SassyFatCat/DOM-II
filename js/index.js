@@ -97,4 +97,4 @@ navContainer.addEventListener('mouseout', (event) => {
 const links = document.querySelectorAll('.nav-container a');
 links.forEach(x => x.addEventListener('click', (event) => {
     event.preventDefault();
-}))
+}));
