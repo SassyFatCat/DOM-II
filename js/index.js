@@ -54,3 +54,20 @@ window.addEventListener('resize', () => {
     alert(`the new height is ${wHeight} and the new width is ${wWidth}`)
 });
 
+// CLICK CHANGE FOOTER TEXT
+const footerPar = document.querySelector('footer p');
+const footer = document.querySelector('footer');
+footer.addEventListener('click', () => {
+    footerPar.textContent = "clicked on footer"
+});
+footer.addEventListener('mouseout', () => {
+    footerPar.textContent = "Copyright Fun Bus 2020"
+});
+
+// DOUBLE CLICK ANYWHERE CHANGE BACKGROUND COLOR
+const outside = document.querySelector('body');
+outside.addEventListener('dblclick', (event) => {
+    let backColor = prompt('What background color?', 'type a color');
+    event.target.style.backgroundColor = backColor;
+    event.stopPropagation();
+})
